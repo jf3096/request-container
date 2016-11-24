@@ -14,7 +14,7 @@ Therefore, if any two component dispatch same http request at around same time, 
 
 2. For Single Page Applications, they make use of Html5 History Api to manage routing. However, any requests that made in previous page might be
 hard to manage/cancel. Imagine the performance when a user is uploading 100mb file and unpatiently leave the page, the 100mb file upload connection is
-still there if developer not manually terminate it. <b>request-conatiner</b> solves this problem to as it provide a container to preserve processing request.
+still there if developer not manually terminate it. <b>request-conatiner solves this problem to as it provide a container to preserve processing request.</b>
 
 ### Environment
 
@@ -30,7 +30,7 @@ still there if developer not manually terminate it. <b>request-conatiner</b> sol
 
 ### How to use
 
-> Javascript
+##### Javascript
 
 ```javascript
     import RequestContainer from 'request-container';
@@ -41,7 +41,7 @@ still there if developer not manually terminate it. <b>request-conatiner</b> sol
     const promiseState = requestContainer.put(JSON.stringify(requestParam), promiseFn);
 ```
 
-> Typescript
+##### Typescript
 
 ```typescript
     import RequestContainer from 'request-container';
