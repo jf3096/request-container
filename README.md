@@ -31,7 +31,8 @@ still there if developer not manually terminate it. <b>request-conatiner</b> sol
     import RequestContainer from 'request-container';
     const requestContainer = RequestContainer.getInstance();
 
-    // const promiseState = requestContainer.put(<a key used to identify your request>, <a function that will execute a request and return a promise>);
+    // const promiseState = requestContainer.put(<a key used to identify your request>, 
+    // <a function that will execute a request and return a promise>);
     const promiseState = requestContainer.put(JSON.stringify(requestParam), promiseFn);
 ```
 
