@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/6a70dd082e6dd97218d76cffb56bf7540dc51368/object-assign/object-assign.d.ts",
+    "raw": "registry:dt/object-assign#4.0.1+20161006140353",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/6a70dd082e6dd97218d76cffb56bf7540dc51368/object-assign/object-assign.d.ts"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "request-container",
+  "version": "0.0.1",
+  "description": "a request container enables you to manage http request",
+  "main": "index.js",
+  "typescript": {
+    "definition": "index.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jf3096/request-conatiner.git"
+  },
+  "scripts": {
+    "test": "mocha ./tests/**/*.js --timeout 10000",
+    "tds": "dts-generator --name request-container --project ./ --out index.d.ts"
+  },
+  "keywords": [
+    "request",
+    "request",
+    "container",
+    "ajax",
+    "container",
+    "ajax",
+    "request",
+    "fetch",
+    "request",
+    "middleware"
+  ],
+  "author": "Ailun She",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "dts-generator": "^2.0.0",
+    "mocha": "^3.1.2",
+    "object-assign": "^4.1.0"
+  }
+}
