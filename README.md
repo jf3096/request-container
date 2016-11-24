@@ -30,6 +30,9 @@ still there if developer not manually terminate it. <b>request-conatiner solves 
 
 ### How to use
 
+What you need to do is to pass your promise request in the requestContainer and it will return you a promiseState which contains
+your promise as well as current promise request status (none/loading/success/error).
+
 ##### Javascript
 
 ```javascript
