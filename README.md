@@ -27,6 +27,9 @@ still there if developer not manually terminate it. <b>request-conatiner</b> sol
 > Typescript
 
 ### How to use
+
+> Javascript
+
 ```javascript
     import RequestContainer from 'request-container';
     const requestContainer = RequestContainer.getInstance();
@@ -35,6 +38,8 @@ still there if developer not manually terminate it. <b>request-conatiner</b> sol
     // <a function that will execute a request and return a promise>);
     const promiseState = requestContainer.put(JSON.stringify(requestParam), promiseFn);
 ```
+
+> Typescript
 
 ```typescript
     import RequestContainer from 'request-container';
