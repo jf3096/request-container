@@ -50,9 +50,9 @@ your promise as well as current promise request status (none/loading/success/err
     import RequestContainer from 'request-container';
     const requestContainer = RequestContainer.getInstance();
 
-    //type RequestParamType = {url: 'www.example.com/api', data: {token:123},method: 'get'};
+    //type RequestParamType = {url: 'www.example.com/api', data: {token:123}, method: 'get'};
     //promiseFn:() =>Promise<any>, e.g.  promiseFn = ()=>$.ajax(...);
-    const promiseState = requestContainer.put(JSON.stringify(requestParam: RequestParamType), promiseFn);
+    const promiseState = requestContainer.put(JSON.stringify(requestParam), promiseFn);
 ```
 
 ### Concurrent Same Request
@@ -62,22 +62,20 @@ Here is a scenario for concurrent same request (for more example please check th
     import RequestContainer from 'request-container';
     
     function httpRequest(duration:number): Promise<void>{
-       return new Promise(()=>{
-         setTimeout(resolve,number);
-       })
+       return new Promise(()=>setTimeout(resolve,number))
     }
     
     const requestContainer = RequestContainer.getInstance();
     
     //assume first attempt request consumes 2 sec
-    const requestParam1 = {url: 'www.example.com/api', data: {token:123},method: 'get'};
+    const requestParam1 = {url: 'www.example.com/api', data: {token:123}, method: 'get'};
     const promiseFn1 = ()=>httpRequest(2000);
-    const promiseState1 = requestContainer.put(JSON.stringify(requestParam: RequestParamType), promiseFn: () =>Promise<any>);
+    const promiseState1 = requestContainer.put(JSON.stringify(requestParam1), promiseFn1);
     
     //assume second attempt request consumes 4 sec
-    const requestParam2 = {url: 'www.example.com/api', data: {token:123},method: 'get'};
+    const requestParam2 = {url: 'www.example.com/api', data: {token:123}, method: 'get'};
     const promiseFn2 = ()=>httpRequest(1000);
-    const promiseState2 = requestContainer.put(JSON.stringify(requestParam: RequestParamType), promiseFn: () =>Promise<any>);
+    const promiseState2 = requestContainer.put(JSON.stringify(requestParam2), promiseFn2);
     
     /**
     * since they are exactly the same request, therefore if request1 sent
@@ -85,3 +83,9 @@ Here is a scenario for concurrent same request (for more example please check th
     * the entire process therefore will have one and only one outgoing request.
     */
 ```
+
+### Unit Testing
+This library has been gone through proper unit testing under the [tests folder](https://github.com/jf3096/request-conatiner/tree/master/tests), feel free to use it :)
+
+### License
+MIT
