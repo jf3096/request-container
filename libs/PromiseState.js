@@ -59,5 +59,6 @@ var PromiseState = (function () {
     };
     return PromiseState;
 }());
-exports.__esModule = true;
-exports["default"] = PromiseState;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = PromiseState;
+//# sourceMappingURL=PromiseState.js.map

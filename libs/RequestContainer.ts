@@ -75,7 +75,7 @@ class RequestContainer<T> {
          * whenever the request completes, remove it from request container
          */
         completeWrapper(promiseState.promise).complete(() => {
-            this.container[key] = void 0;
+            this.remove(key);
         });
 
         return promiseState;
@@ -89,6 +89,27 @@ class RequestContainer<T> {
         const promiseState = new PromiseState(promiseFn);
         promiseState.exec();
         return promiseState;
+    }
+
+    /**
+     * clear the container and return all the promise state
+     * the return values allow developer to further process it such as cancel all the promise
+     */
+    public clear(): PromiseState<T>[] {
+        const promiseStates = [];
+        for (let key in this.container) {
+            const promiseState = this.container[key];
+            this.remove(key);
+            promiseStates.push(promiseState);
+        }
+        return promiseStates;
+    }
+
+    /**
+     * remove item from container
+     */
+    private remove(key: string) {
+        delete this.container[key];
     }
 
     /**

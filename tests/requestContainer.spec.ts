@@ -93,4 +93,20 @@ describe(`class: RequestContainer`, () => {
             done();
         });
     });
+    it('new RequestContainer should not allow clear all promise state and return all promise state', (done) => {
+        const requestParam: RequestParamType = {url: `http://www.example.com/api`, data: {token: 123}, method: 'get'};
+        const timeoutDuration = 1000;
+        const promiseList = [];
+        for (let counter = 0; counter < 10; counter++) {
+            promiseList.push(new Promise((resolve) => {
+                const newRequest = objectAssign({}, requestParam, {token: counter});
+                const promiseState = requestContainer.put(JSON.stringify(newRequest), promiseFn(newRequest, timeoutDuration));
+                resolve(promiseState.promise);
+            }))
+        }
+        const promiseStates = requestContainer.clear();
+        expect(Object.keys(requestContainer.container).length).to.be.equal(0);
+        expect(promiseStates.length).to.be.eq(10);
+        done();
+    });
 });

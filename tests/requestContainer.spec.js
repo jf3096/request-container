@@ -98,5 +98,24 @@ describe("class: RequestContainer", function () {
             done();
         });
     });
+    it('new RequestContainer should not allow clear all promise state and return all promise state', function (done) {
+        var requestParam = { url: "http://www.example.com/api", data: { token: 123 }, method: 'get' };
+        var timeoutDuration = 1000;
+        var promiseList = [];
+        var _loop_4 = function(counter) {
+            promiseList.push(new Promise(function (resolve) {
+                var newRequest = objectAssign({}, requestParam, { token: counter });
+                var promiseState = requestContainer.put(JSON.stringify(newRequest), promiseFn(newRequest, timeoutDuration));
+                resolve(promiseState.promise);
+            }));
+        };
+        for (var counter = 0; counter < 10; counter++) {
+            _loop_4(counter);
+        }
+        var promiseStates = requestContainer.clear();
+        chai_1.expect(Object.keys(requestContainer.container).length).to.be.equal(0);
+        chai_1.expect(promiseStates.length).to.be.eq(10);
+        done();
+    });
 });
 //# sourceMappingURL=requestContainer.spec.js.map

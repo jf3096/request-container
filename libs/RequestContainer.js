@@ -58,7 +58,7 @@ var RequestContainer = (function () {
          * whenever the request completes, remove it from request container
          */
         completeWrapper(promiseState.promise).complete(function () {
-            _this.container[key] = void 0;
+            _this.remove(key);
         });
         return promiseState;
     };
@@ -67,9 +67,28 @@ var RequestContainer = (function () {
      * @returns {PromiseState<IResponse>} return the wrapper
      */
     RequestContainer.executePromise = function (promiseFn) {
-        var promiseState = new PromiseState_1["default"](promiseFn);
+        var promiseState = new PromiseState_1.default(promiseFn);
         promiseState.exec();
         return promiseState;
+    };
+    /**
+     * clear the container and return all the promise state
+     * the return values allow developer to further process it such as cancel all the promise
+     */
+    RequestContainer.prototype.clear = function () {
+        var promiseStates = [];
+        for (var key in this.container) {
+            var promiseState = this.container[key];
+            this.remove(key);
+            promiseStates.push(promiseState);
+        }
+        return promiseStates;
+    };
+    /**
+     * remove item from container
+     */
+    RequestContainer.prototype.remove = function (key) {
+        delete this.container[key];
     };
     /**
      * a helper represent request container has a promise state
@@ -85,5 +104,6 @@ var RequestContainer = (function () {
     };
     return RequestContainer;
 }());
-exports.__esModule = true;
-exports["default"] = RequestContainer;
+Object.defineProperty(exports, "__esModule", {value: true});
+exports.default = RequestContainer;
+//# sourceMappingURL=RequestContainer.js.map
