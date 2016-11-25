@@ -84,6 +84,10 @@ Here is a scenario for concurrent same request (for more example please check th
     */
 ```
 
+### Roadmap
+The request-container will be used as a small part of module in next library which is about smart http request caching. I am stuck at how to create a suitable algorithm to handle cache garbage collection (GC). Once done, it will make more sense of why
+request-container is simple but very useful for any request module for any project.
+
 ### Unit Testing
 This library has been gone through proper unit testing under the [tests folder](https://github.com/jf3096/request-conatiner/tree/master/tests), feel free to use it :)
 
