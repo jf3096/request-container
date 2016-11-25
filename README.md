@@ -7,7 +7,7 @@ This library is an extremely lightweight only do two things:
 
 2. Every http requests should pass to a container so that developer could manage it anytime anywhere.
 
-###Senarios
+### Senarios
 1. For any component oriented application such as react, vue, angular, each component works independently and isolately.
 Therefore, if any two component dispatch same http request at around same time, mutiple same requests made. TO mitigate this,
 <b>request-conatinersolves this problem to ensure all same requests are only made one and only one outgoing http request at same range of time.</b>
@@ -72,9 +72,9 @@ Here is a scenario for concurrent same request (for more example please check th
     const promiseFn1 = ()=>httpRequest(2000);
     const promiseState1 = requestContainer.put(JSON.stringify(requestParam1), promiseFn1);
     
-    //assume second attempt request consumes 4 sec
+    //assume second attempt request consumes 4 sec, it doesn't matter how long it takes
     const requestParam2 = {url: 'www.example.com/api', data: {token:123}, method: 'get'};
-    const promiseFn2 = ()=>httpRequest(1000);
+    const promiseFn2 = ()=>httpRequest(4000);
     const promiseState2 = requestContainer.put(JSON.stringify(requestParam2), promiseFn2);
     
     /**
@@ -89,7 +89,7 @@ The request-container will be used as a small part of module in next library whi
 request-container is simple but very useful for any request module for any project.
 
 ### Unit Testing
-This library has been gone through proper unit testing under the [tests folder](https://github.com/jf3096/request-conatiner/tree/master/tests), feel free to use it :)
+This library has been gone through proper unit testing under the [tests folder](https://github.com/jf3096/request-conatiner/tree/master/tests), feel free to use the request-container :)
 
 ### License
 MIT
