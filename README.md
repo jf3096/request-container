@@ -1,20 +1,22 @@
 request-container
 ===========================================================
 
+[Chinese README (中文文档)](https://github.com/jf3096/request-conatiner/tree/master/README/CHINESE-README.md)
+
 This library is an extremely lightweight only do two things:
 
-1. Same http requests should derive same result at the same range of time.
+1. Same http requests should derive same result with only one outgoing request at the same range of time.
 
 2. Every http requests should pass to a container so that developer could manage it anytime anywhere.
 
 ### Senarios
-1. For any component oriented application such as react, vue, angular, each component works independently and isolately.
-Therefore, if any two component dispatch same http request at around same time, mutiple same requests made. TO mitigate this,
-<b>request-conatinersolves this problem to ensure all same requests are only made one and only one outgoing http request at same range of time.</b>
+1. For any component oriented application such as react, vue, angular, each component works independently and isolately.  There shouldn't be any communication between any two components in most cases.
+Therefore, if any two component dispatches same http request at around same time, mutiple same requests will make and as a result wasted network resources and burden of server. To mitigate this,
+<b>request-conatiner ensures all same requests are only made one and only one outgoing http request at same range of time.</b>
 
 2. For Single Page Applications, they make use of Html5 History Api to manage routing. However, any requests that made in previous page might be
-hard to manage/cancel. Imagine the performance when a user is uploading 100mb file and unpatiently leave the page, the 100mb file upload connection is
-still there if developer not manually terminate it. <b>request-conatiner solves this problem to as it provide a container to preserve processing request.</b>
+hard to manage/cancel. Imagine the performance when a user is uploading a 100mb file and unpatiently leave the page, the 100mb file upload connection is
+still there if developer not manually terminate it. <b>request-conatiner solves this problem to as it provide a place where developer can reach all processing requests easily.</b>
 
 ### Environment
 
@@ -30,7 +32,7 @@ still there if developer not manually terminate it. <b>request-conatiner solves 
 
 ### How to use
 
-What you need to do is to pass your promise request in the requestContainer and it will return you a promiseState which contains
+What you need to do is to pass your promise request in the request container and it will return you a promiseState which contains
 your promise as well as current promise request status (none/loading/success/error).
 
 ##### Javascript
