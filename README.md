@@ -1,7 +1,7 @@
 request-container
 ===========================================================
 
-[Chinese README (中文文档)](https://github.com/jf3096/request-conatiner/tree/master/README/CHINESE-README.md)
+[Chinese README (中文文档)](https://github.com/jf3096/request-container/blob/master/READEME-CHINESE.md)
 
 This library is an extremely lightweight only do two things:
 
