@@ -18,6 +18,12 @@ Therefore, if any two component dispatches same http request at around same time
 hard to manage/cancel. Imagine the performance when a user is uploading a 100mb file and unpatiently leave the page, the 100mb file upload connection is
 still there if developer not manually terminate it. <b>request-conatiner solves this problem to as it provide a place where developer can reach all processing requests easily.</b>
 
+
+### Get Started
+```bash
+    npm install request-container --save
+```
+
 ### Environment
 
 > NodeJS
