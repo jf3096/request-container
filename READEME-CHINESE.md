@@ -94,7 +94,7 @@ Here is a scenario for concurrent same request (for more example please check th
 
 ### 后期
 request-container(请求容器)会被作为我将要编写的下一个库的一个非常小的模块. 而下一个库会关于http请求缓存. 现在基本开发完成, 但卡在如果使用一个合理合适的方式去管理
-缓存清理(GC). 下一个库完成后你会理解为什么request-container(请求容器)原理非常简单但是却是一个非常有容的模块.
+缓存清理(GC). 下一个库完成后你会理解为什么request-container(请求容器), 原理非常简单但是却是一个非常实用的模块.
 
 ### 单元测试
 这个库已经通过较完善的[单元测试用例](https://github.com/jf3096/request-conatiner/tree/master/tests), 请放心使用:)
