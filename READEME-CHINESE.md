@@ -17,6 +17,11 @@ request-container (请求容器)
 不耐烦不想等了点了后退按钮返回先前页面, 这个时候当前上传文件的请求仍然存在. <b>request-container(请求容器)提供了一个非常好的方式让开发者能
 轻易管理到这些请求.</b>
 
+
+### 安装
+```bash
+    npm install request-container --save
+```
 ### 适用环境
 
 > NodeJS
