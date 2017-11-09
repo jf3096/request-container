@@ -63,8 +63,8 @@ request-container (请求容器)
 ```
 
 
-### Concurrent Same Request
-Here is a scenario for concurrent same request (for more example please check the [tests folder](https://github.com/jf3096/request-conatiner/tree/master/tests))
+### 并发相同请求
+以下是一个场景在同一时间内并发多个请求 (更多例子可以查看 [tests folder](https://github.com/jf3096/request-conatiner/tree/master/tests))
 
 ```typescript
     import RequestContainer from 'request-container';
