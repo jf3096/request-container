@@ -3,7 +3,7 @@ request-container
 
 [Chinese README (中文文档)](https://github.com/jf3096/request-container/blob/master/READEME-CHINESE.md)
 
-This library is extremely lightweight that only achieve two things:
+This library is extremely lightweight that only achieves two things:
 
 1. Same http requests should derive same result with only one outgoing request at the same range of time.
 
